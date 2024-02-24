@@ -1,0 +1,32 @@
+<div class="table-container">
+    <h1 class="text-4xl font-bold text-gray-800">Point Table</h1>
+    <table class="shadow-lg text-center mt-3 w-full whitespace-nowrap bg-white shadow-md rounded-lg">
+        <thead>
+            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                @for (heading of tableHeading; track $index) {
+                    <th class="py-3 px-6 text-left">{{heading}}</th>
+                }
+               
+            </tr>
+        </thead>
+        <tbody class="text-gray-600 text-sm font-light">
+           
+                @for (team of pointTable; track $index) {
+                    <tr class="border-b border-gray-200 hover:bg-gray-100"
+                    ngClass="{'bg-green-500'}"
+                    >
+                  @if ($index>0) {
+                    @for (data of team; track $index) {
+                        <td class="py-3 px-6 text-left whitespace-nowrap">{{data}}</td>
+                       }
+                  }
+                </tr>
+                }
+            
+            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
